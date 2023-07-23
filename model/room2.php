@@ -20,6 +20,15 @@ class Room2{
         $this->conn = $db;
     }
 
-    //ฟังก์ชั่นต่าง ๆ ที่จะทำงานกับ Database ตาม API ที่เราจะทำการสร้างมันขึ้นมา ซึ่งมีมากน้อยแล้วแต่
+    //function getAllTempRoom2
+    function getAllTempRoom2()
+    {
+        $strSQL = "SELECT * FROM room2_tb";
 
+        $stmt = $this->conn->prepare($strSQL);
+
+        $stmt->execute();
+
+        return $stmt;
+    }
 }
